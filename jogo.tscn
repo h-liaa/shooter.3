@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://ctjcyelgcup1a"]
+
+[ext_resource type="Script" uid="uid://bd2lgv3uao0uh" path="res://player.gd" id="1_2ka1p"]
+[ext_resource type="Texture2D" uid="uid://dsfdbwvlpoeuk" path="res://recursos/tartaruga/1.png" id="2_7rhuj"]
+[ext_resource type="Texture2D" uid="uid://b1ttwsi5gwnvs" path="res://recursos/tartaruga/2.png" id="3_msvki"]
+[ext_resource type="Texture2D" uid="uid://d1mx0wipod5n8" path="res://recursos/tartaruga/3.png" id="4_qew1n"]
+[ext_resource type="Texture2D" uid="uid://nueiarjrrpp2" path="res://recursos/tartaruga/4.png" id="5_qlqx7"]
+[ext_resource type="Texture2D" uid="uid://cpmq1ae1nugbk" path="res://recursos/tartaruga/5.png" id="6_dwd3o"]
+[ext_resource type="Texture2D" uid="uid://tpq8mbdrmnjg" path="res://recursos/tartaruga/6.png" id="7_0ebkc"]
+[ext_resource type="Texture2D" uid="uid://b7yyh7biicjcp" path="res://recursos/tartaruga/7.png" id="8_48tcl"]
+[ext_resource type="Texture2D" uid="uid://c4taewx7jf3yx" path="res://recursos/tartaruga/8.png" id="9_veval"]
+[ext_resource type="Script" uid="uid://df34b3x48yrvs" path="res://fundo.gd" id="10_7rhuj"]
+[ext_resource type="Texture2D" uid="uid://dpxjeyc1r8jw0" path="res://recursos/blue sky.jpg" id="10_v41bu"]
+[ext_resource type="Texture2D" uid="uid://ct3a4yh881usb" path="res://recursos/Vector_fantastic_grass_and_flower_background_in_green_tones-removebg-preview.png" id="11_1aaqb"]
+[ext_resource type="Texture2D" uid="uid://usws5wlsbq37" path="res://recursos/Millions_of_PNG_Images__Backgrounds_and_Vectors_for_Free_Download___Pngtree-removebg-preview.png" id="12_fxpqx"]
+[ext_resource type="Texture2D" uid="uid://ca36x8onexsfc" path="res://download__2_-removebg-preview.png" id="13_3u2t7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugcfa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4w4y4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7rhuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_msvki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qew1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qlqx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dwd3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ebkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_48tcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_veval")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w4y4"]
+size = Vector2(1161, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymqg7"]
+size = Vector2(1163.25, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gees"]
+size = Vector2(20, 712)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpi75"]
+size = Vector2(22, 665.5)
+
+[node name="Jogo" type="Node2D" unique_id=228841132]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=248337800]
+script = ExtResource("1_2ka1p")
+
+[node name="CorpoPlayer" type="CollisionShape2D" parent="Player" unique_id=137401631]
+shape = SubResource("RectangleShape2D_ugcfa")
+
+[node name="ImagemPlayer" type="AnimatedSprite2D" parent="Player" unique_id=538104384]
+position = Vector2(144.625, 456.875)
+scale = Vector2(1.8815789, 1.741453)
+sprite_frames = SubResource("SpriteFrames_4w4y4")
+frame_progress = 0.18545683
+
+[node name="Paredes" type="StaticBody2D" parent="." unique_id=60105818]
+
+[node name="Cima" type="CollisionShape2D" parent="Paredes" unique_id=572161126]
+position = Vector2(572, -7)
+shape = SubResource("RectangleShape2D_4w4y4")
+
+[node name="Baixo" type="CollisionShape2D" parent="Paredes" unique_id=958962361]
+position = Vector2(582.625, 659)
+shape = SubResource("RectangleShape2D_ymqg7")
+
+[node name="Esquerda" type="CollisionShape2D" parent="Paredes" unique_id=1773455130]
+position = Vector2(-6, 344)
+shape = SubResource("RectangleShape2D_1gees")
+
+[node name="Direita" type="CollisionShape2D" parent="Paredes" unique_id=417895004]
+position = Vector2(1154, 319.25)
+shape = SubResource("RectangleShape2D_lpi75")
+
+[node name="Fundo" type="ParallaxBackground" parent="." unique_id=623093951]
+script = ExtResource("10_7rhuj")
+
+[node name="Ceu" type="ParallaxLayer" parent="Fundo" unique_id=1732451353]
+motion_scale = Vector2(0.08, 0.08)
+motion_mirroring = Vector2(1140, 0)
+
+[node name="imagemceu" type="Sprite2D" parent="Fundo/Ceu" unique_id=330413686]
+position = Vector2(580, 235.00002)
+scale = Vector2(1.5502717, 1.1473432)
+texture = ExtResource("10_v41bu")
+
+[node name="Grama" type="ParallaxLayer" parent="Fundo" unique_id=1278259092]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1142, 0)
+
+[node name="imagemgrama" type="Sprite2D" parent="Fundo/Grama" unique_id=1334277388]
+position = Vector2(573, 466)
+scale = Vector2(1.7736435, 1)
+texture = ExtResource("11_1aaqb")
+
+[node name="Nuvens" type="ParallaxLayer" parent="Fundo" unique_id=1775906462]
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="imagemnuvem" type="Sprite2D" parent="Fundo/Nuvens" unique_id=528122895]
+position = Vector2(562.99994, 221)
+scale = Vector2(1.4371428, 1.0742857)
+texture = ExtResource("12_fxpqx")
+
+[node name="arvore" type="ParallaxLayer" parent="Fundo" unique_id=1249445802]
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="imagemarvore" type="Sprite2D" parent="Fundo/arvore" unique_id=429949035]
+position = Vector2(965.0001, 493)
+scale = Vector2(0.6931072, 0.6912844)
+texture = ExtResource("13_3u2t7")
