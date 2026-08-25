@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bnveihuj78rny"]
+
+[ext_resource type="Script" uid="uid://cfg17wpyagof6" path="res://inimigo.gd" id="1_enrbn"]
+[ext_resource type="Texture2D" uid="uid://qn5qtajt11vx" path="res://inimigo/armazin.png" id="2_l0fh3"]
+[ext_resource type="Texture2D" uid="uid://bov5h1exx6164" path="res://inimigo/2.png" id="3_o83ti"]
+[ext_resource type="Texture2D" uid="uid://bclurpwviv1xm" path="res://inimigo/Game Boy Advance - Metroid Fusion - Miscellaneous - Explosion.png" id="4_5cs1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekwcj"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(0, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eewpo"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(105, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3af6e"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(210, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nglqo"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(315, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2mw5"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(420, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kus2f"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(525, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftkuo"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(630, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hydjg"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(735, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g12hr"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(840, 0, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkxog"]
+atlas = ExtResource("4_5cs1f")
+region = Rect2(945, 0, 105, 107)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4w4y4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l0fh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o83ti")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekwcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekwcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekwcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eewpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3af6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nglqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2mw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kus2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftkuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hydjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g12hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkxog")
+}],
+"loop": 1,
+"name": &"explosao",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugcfa"]
+size = Vector2(203, 98)
+
+[node name="inimigo" type="Area2D" unique_id=1349288592 groups=["inimigo"]]
+collision_layer = 2
+script = ExtResource("1_enrbn")
+
+[node name="imageminimigo" type="AnimatedSprite2D" parent="." unique_id=1908162703]
+position = Vector2(-2, -1)
+sprite_frames = SubResource("SpriteFrames_4w4y4")
+autoplay = "default"
+frame_progress = 0.8027558
+
+[node name="corpoinimigo" type="CollisionShape2D" parent="." unique_id=636822586]
+position = Vector2(0.5, 15)
+shape = SubResource("RectangleShape2D_ugcfa")

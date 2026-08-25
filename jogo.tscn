@@ -10,12 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://b7yyh7biicjcp" path="res://recursos/tartaruga/7.png" id="8_48tcl"]
 [ext_resource type="Texture2D" uid="uid://c4taewx7jf3yx" path="res://recursos/tartaruga/8.png" id="9_veval"]
 [ext_resource type="Script" uid="uid://df34b3x48yrvs" path="res://fundo.gd" id="10_7rhuj"]
-[ext_resource type="Texture2D" uid="uid://dpxjeyc1r8jw0" path="res://recursos/blue sky.jpg" id="10_v41bu"]
 [ext_resource type="Texture2D" uid="uid://ct3a4yh881usb" path="res://recursos/Vector_fantastic_grass_and_flower_background_in_green_tones-removebg-preview.png" id="11_1aaqb"]
+[ext_resource type="Texture2D" uid="uid://jxpbssfv2tia" path="res://recursos/Clouds.jpg" id="11_7rhuj"]
 [ext_resource type="Texture2D" uid="uid://usws5wlsbq37" path="res://recursos/Millions_of_PNG_Images__Backgrounds_and_Vectors_for_Free_Download___Pngtree-removebg-preview.png" id="12_fxpqx"]
-[ext_resource type="Texture2D" uid="uid://ca36x8onexsfc" path="res://download__2_-removebg-preview.png" id="13_3u2t7"]
+[ext_resource type="Texture2D" uid="uid://ca36x8onexsfc" path="res://recursos/download__2_-removebg-preview.png" id="13_3u2t7"]
+[ext_resource type="Script" uid="uid://b2spr6rf3tp3n" path="res://gerador_inimigos.gd" id="15_msvki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ugcfa"]
+size = Vector2(181, 172)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4w4y4"]
 animations = [{
@@ -50,16 +52,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4w4y4"]
-size = Vector2(1161, 20)
+size = Vector2(1161, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymqg7"]
-size = Vector2(1163.25, 20)
+size = Vector2(1163.25, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gees"]
-size = Vector2(20, 712)
+size = Vector2(36, 678)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpi75"]
-size = Vector2(22, 665.5)
+size = Vector2(37, 678)
 
 [node name="Jogo" type="Node2D" unique_id=228841132]
 
@@ -67,43 +69,47 @@ size = Vector2(22, 665.5)
 script = ExtResource("1_2ka1p")
 
 [node name="CorpoPlayer" type="CollisionShape2D" parent="Player" unique_id=137401631]
+position = Vector2(124.5, 451)
 shape = SubResource("RectangleShape2D_ugcfa")
+debug_color = Color(0.99884444, 0, 0.14337987, 0.41960785)
 
 [node name="ImagemPlayer" type="AnimatedSprite2D" parent="Player" unique_id=538104384]
 position = Vector2(144.625, 456.875)
 scale = Vector2(1.8815789, 1.741453)
 sprite_frames = SubResource("SpriteFrames_4w4y4")
-frame_progress = 0.18545683
+autoplay = "default"
+frame = 7
+frame_progress = 0.8233734
 
 [node name="Paredes" type="StaticBody2D" parent="." unique_id=60105818]
 
 [node name="Cima" type="CollisionShape2D" parent="Paredes" unique_id=572161126]
-position = Vector2(572, -7)
+position = Vector2(572, -10)
 shape = SubResource("RectangleShape2D_4w4y4")
 
 [node name="Baixo" type="CollisionShape2D" parent="Paredes" unique_id=958962361]
-position = Vector2(582.625, 659)
+position = Vector2(582.625, 637)
 shape = SubResource("RectangleShape2D_ymqg7")
 
 [node name="Esquerda" type="CollisionShape2D" parent="Paredes" unique_id=1773455130]
-position = Vector2(-6, 344)
+position = Vector2(2, 327)
 shape = SubResource("RectangleShape2D_1gees")
 
 [node name="Direita" type="CollisionShape2D" parent="Paredes" unique_id=417895004]
-position = Vector2(1154, 319.25)
+position = Vector2(1146.5, 313)
 shape = SubResource("RectangleShape2D_lpi75")
 
 [node name="Fundo" type="ParallaxBackground" parent="." unique_id=623093951]
 script = ExtResource("10_7rhuj")
 
 [node name="Ceu" type="ParallaxLayer" parent="Fundo" unique_id=1732451353]
-motion_scale = Vector2(0.08, 0.08)
-motion_mirroring = Vector2(1140, 0)
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(1141.745, 0)
 
 [node name="imagemceu" type="Sprite2D" parent="Fundo/Ceu" unique_id=330413686]
-position = Vector2(580, 235.00002)
-scale = Vector2(1.5502717, 1.1473432)
-texture = ExtResource("10_v41bu")
+position = Vector2(573, 238)
+scale = Vector2(1.5512908, 1.1473432)
+texture = ExtResource("11_7rhuj")
 
 [node name="Grama" type="ParallaxLayer" parent="Fundo" unique_id=1278259092]
 motion_scale = Vector2(0.1, 0.1)
@@ -131,3 +137,13 @@ motion_mirroring = Vector2(1152, 0)
 position = Vector2(965.0001, 493)
 scale = Vector2(0.6931072, 0.6912844)
 texture = ExtResource("13_3u2t7")
+
+[node name="GeradorInimigos" type="Node2D" parent="." unique_id=905290935]
+position = Vector2(1090, 47)
+script = ExtResource("15_msvki")
+
+[node name="Timer" type="Timer" parent="GeradorInimigos" unique_id=1541877836]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="GeradorInimigos/Timer" to="GeradorInimigos" method="_on_timer_timeout"]

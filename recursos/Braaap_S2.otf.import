@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bqj84rgcov0ur"
-path="res://.godot/imported/Braaap_S2.otf-59ad128746567ef1e968a30d78ddea6d.fontdata"
+path="res://.godot/imported/Braaap_S2.otf-a743e165b04322c579e3b60df87bbde0.fontdata"
 
 [deps]
 
-source_file="res://Braaap_S2.otf"
-dest_files=["res://.godot/imported/Braaap_S2.otf-59ad128746567ef1e968a30d78ddea6d.fontdata"]
+source_file="res://recursos/Braaap_S2.otf"
+dest_files=["res://.godot/imported/Braaap_S2.otf-a743e165b04322c579e3b60df87bbde0.fontdata"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca36x8onexsfc"
-path="res://.godot/imported/download__2_-removebg-preview.png-2ccbcba831de7414259a145c418dd6b0.ctex"
+uid="uid://bclurpwviv1xm"
+path="res://.godot/imported/Game Boy Advance - Metroid Fusion - Miscellaneous - Explosion.png-6cabf3e2f552e09237e7f57cc227866a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://download__2_-removebg-preview.png"
-dest_files=["res://.godot/imported/download__2_-removebg-preview.png-2ccbcba831de7414259a145c418dd6b0.ctex"]
+source_file="res://inimigo/Game Boy Advance - Metroid Fusion - Miscellaneous - Explosion.png"
+dest_files=["res://.godot/imported/Game Boy Advance - Metroid Fusion - Miscellaneous - Explosion.png-6cabf3e2f552e09237e7f57cc227866a.ctex"]
 
 [params]
 
