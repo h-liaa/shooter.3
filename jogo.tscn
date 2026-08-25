@@ -134,12 +134,12 @@ motion_scale = Vector2(0.15, 0.15)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="imagemarvore" type="Sprite2D" parent="Fundo/arvore" unique_id=429949035]
-position = Vector2(965.0001, 493)
+position = Vector2(965, 493)
 scale = Vector2(0.6931072, 0.6912844)
 texture = ExtResource("13_3u2t7")
 
 [node name="GeradorInimigos" type="Node2D" parent="." unique_id=905290935]
-position = Vector2(1090, 47)
+position = Vector2(-3, -1)
 script = ExtResource("15_msvki")
 
 [node name="Timer" type="Timer" parent="GeradorInimigos" unique_id=1541877836]
